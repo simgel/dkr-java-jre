@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Build
-        run: echo "Hello World"
+        run: ./build.sh
         shell: bash
         env: 
           SCR_GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
