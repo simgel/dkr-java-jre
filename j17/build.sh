@@ -25,6 +25,24 @@ jlink --verbose \
 echo "# temurin image size: "
 du -h -d 1 /opt/image/usr/lib/jvm
 
+# setting up links
+mkdir -p /opt/image/etc/alternatives
+cd /opt/image/etc/alternatives
+ln -s /usr/lib/jvm/temurin/bin/java ./java
+ln -s /usr/lib/jvm/temurin/bin/keytool ./keytool
+ln -s /usr/lib/jvm/temurin/bin/rmiregistry ./rmiregistry
+ln -s /usr/lib/jvm/temurin/bin/jrunscript ./jrunscript
+cd -
+
+mkdir /opt/image/usr/bin
+cd /opt/image/usr/bin
+ln -s /etc/alternatives/java ./java
+ln -s /etc/alternatives/keytool ./keytool
+ln -s /etc/alternatives/rmiregistry ./rmiregistry
+ln -s /etc/alternatives/jrunscript ./jrunscript
+cd -
+
+# creatig output tar
 echo "# creating image tar"
 cd /opt/image
 tar -cf /opt/docker/image.tar ./
