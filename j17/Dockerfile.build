@@ -1,0 +1,10 @@
+FROM ghcr.io/simgel/dkr-java-adoptium:17 as adoptium
+ARG LINKVER=jre
+
+WORKDIR /opt/docker
+
+COPY build.sh .
+COPY modules.$LINKVER.txt .
+
+ENV LINKVER=jre
+CMD bash /opt/docker/build.sh $LINKVER
