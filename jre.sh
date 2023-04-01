@@ -20,4 +20,4 @@ BIID=$(cat build.iid)
 
 rm build.iid
 rm -f ./j17/image.tar
-# docker rmi "$BIID"
+docker rmi "$BIID"
