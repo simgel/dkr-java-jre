@@ -1,4 +1,4 @@
-FROM ghcr.io/simgel/dkr-java-adoptium:17 as adoptium
+FROM ghcr.io/simgel/dkr-java-adoptium:20 as adoptium
 ARG LINKVER=jre
 
 WORKDIR /opt/docker
