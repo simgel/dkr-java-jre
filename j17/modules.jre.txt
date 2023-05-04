@@ -18,3 +18,4 @@ java.sql.rowset
 java.transaction.xa
 java.xml
 java.xml.crypto
+jdk.crypto.ec
