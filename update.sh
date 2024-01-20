@@ -6,8 +6,8 @@ IMAGE="ghcr.io/simgel/dkr-java-jre"
 BASEI="ghcr.io/simgel/dkr-java-adoptium"
 
 
-BASEID=$(docker run --rm "$BASEI:17" /usr/bin/java --version)
-IMGID=$(docker run --rm "$IMAGE:17-jre" /usr/bin/java --version)
+BASEID=$(docker run --rm "$BASEI:17" /usr/bin/java --version | head -n 1)
+IMGID=$(docker run --rm "$IMAGE:17-jre" /usr/bin/java --version | head -n 1)
 
 if [[ "$BASEID" == "$IMGID" ]]; then
     echo ">> no update required for java 17"
@@ -18,8 +18,8 @@ fi
 
 
 
-BASEID=$(docker run --rm "$BASEI:21" /usr/bin/java --version)
-IMGID=$(docker run --rm "$IMAGE:21-jre" /usr/bin/java --version)
+BASEID=$(docker run --rm "$BASEI:21" /usr/bin/java --version | head -n 1)
+IMGID=$(docker run --rm "$IMAGE:21-jre" /usr/bin/java --version | head -n 1)
 
 if [[ "$BASEID" == "$IMGID" ]]; then
     echo ">> no update required for java 21"
