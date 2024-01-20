@@ -4,7 +4,19 @@
 
 ## About
 
-Minimal JRE Image based on Adoptium.
+Minimal `~140MB` JRE Image based on Adoptium.
+
+
+**Java 17**
+```Dockerfile
+FROM ghcr.io/simgel/dkr-java-jre:17-jre
+```
+
+**Java 21**
+```Dockerfile
+FROM ghcr.io/simgel/dkr-java-jre:21-jre
+```
+
 
 
 ## License
